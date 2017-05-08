@@ -1,0 +1,48 @@
+$fonts:'GillSansNova-Light',Arial,sans-serif;
+$bodycolor:#000;
+$linkcolor:#000;
+$linkcolorhover:#0099a8;
+
+$fonts-path: "../fonts" !default;
+
+@mixin animation($cssrule: all, $delay:.25s, $effect:ease-in-out){
+	transition:$cssrule $delay $effect;
+}
+
+@mixin borderradius($rad: 5px){
+	border-radius:$rad;
+}
+@mixin close_btn($color:#fff, $right:45px, $top:45px) {
+	position: absolute;
+	right:$right;
+	top: $top;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	transform:rotate(45deg);
+	@include animation;
+	&:before,
+	&:after{
+		content: '';
+		position: absolute;
+		width: 40px;
+		height: 2px;
+		background-color: $color;
+		left: 0;
+		top: 19px;
+	}
+	&:before{
+		height: 40px;
+		width: 2px;
+		left: 19px;
+		top: 0;
+	}
+	&:hover:after{
+		height: 4px;
+		width: 42px;
+	}
+	&:hover:before{
+		width: 4px;
+		height: 42px;
+	}
+}
