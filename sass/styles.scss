@@ -329,7 +329,6 @@ body{
 		.note{
 			font:15px GillSansNova-Light, Arial, sans-serif;
 			text-transform: none;
-			margin-left: 10px;
 		}
 	}
 	.allproducts_list{
@@ -348,6 +347,45 @@ body{
 			font-size: 22px;
 			text-transform: capitalize;
 			padding-left: 30px;
+		}
+	}
+}
+.hasDrop{
+	.drop{
+		height: 0;
+		overflow: hidden;
+	}
+	ul{
+		font-size: 22px;
+		line-height: normal;
+		margin: 15px 0 15px 30px;
+	}
+	li{padding-bottom: 20px;}
+	.title{
+		span{
+			display: inline-block;
+			position: relative;
+			padding-right: 30px;
+			&:after{
+				content:"\f107";
+				position: absolute;
+				right: 0;
+				top: 6px;
+				font:normal normal normal 20px/1 FontAwesome;
+				font-size:inherit;
+				text-rendering:auto;
+				-webkit-font-smoothing:antialiased;
+				-moz-osx-font-smoothing:grayscale;
+			}
+		}
+	}
+	&.opened{
+		.title{
+			span{
+				&:after{
+					content:"\f106";
+				}
+			}
 		}
 	}
 }
