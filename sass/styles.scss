@@ -220,6 +220,137 @@ body{
 		}
 	}
 }
+#mobile_nav{
+	display: none;
+	float: left;
+}
+.menu_btn{
+	cursor: pointer;
+	display: block;
+	text-transform: uppercase;
+	font:22px GillSansNova-Book, Arial, sans-serif;
+	position: relative;
+	margin-top: 8px;
+	margin-left: 8px;
+	&:before,
+	&:after{
+		content:'';
+		position:absolute;
+		top:6px;
+		left:0;
+		background:#000;
+		width:24px;
+		height:2px;
+		animation-duration:0.5s;
+		animation-fill-mode:forwards;
+		animation-name:rotate180;
+	}
+	&:before{
+		top:auto;
+		bottom:4px;
+		animation-name:rotate0;
+	}
+	span{
+		display: block;
+		padding-left: 30px;
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 16px;
+			height: 2px;
+			width: 24px;
+			background-color: #000;
+		}
+	}
+	.menu_opened &{
+		&:before{
+			animation-name:rotate45;
+			bottom:9px !important;
+		}
+		&:after{
+			animation-name:rotate135;
+			top:12px !important;
+		}
+		span{
+			&:after{
+				background:none !important;
+			}
+		}
+	}
+}
+@keyframes rotate45{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(45deg);}
+}
+@keyframes rotate135{
+	0%{transform:rotate(180deg);}
+	100%{transform:rotate(135deg);}
+}
+@keyframes rotate180{
+	0%{transform:rotate(135deg);}
+	100%{transform:rotate(180deg);}
+}
+@keyframes rotate0{
+	0%{transform:rotate(45deg);}
+	100%{transform:rotate(0deg);}
+}
+.mobile_nav_drop{
+	position: absolute;
+	left: 0;
+	top: 100px;
+	width: 100%;
+	background: #fff;
+	z-index: 51;
+	box-shadow:0 4px 4px #e9e9e9;
+	opacity: 0;
+	z-index: -99;
+	.menu_opened &{
+		opacity: 1;
+		z-index: 51;
+		@include animation($cssrule: opacity);
+	}
+	.main_list{
+		padding: 0 20px;
+		& > li{
+			border-top: 1px solid #ebebeb;
+			&:first-child{border: none;}
+		}
+		.contacts_options{
+			border: none;
+			margin: 0;
+		}
+	}
+	strong.title{
+		display: block;
+		font:22px GillSansNova-Book, Arial, sans-serif;
+		padding: 15px 0;
+		letter-spacing: 1px;
+		.note{
+			font:15px GillSansNova-Light, Arial, sans-serif;
+			text-transform: none;
+			margin-left: 10px;
+		}
+	}
+	.allproducts_list{
+		padding-bottom: 20px;
+		li{
+			overflow: hidden;
+			padding: 10px 0;
+		}
+		a{display: block;}
+		span,
+		img{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		span{
+			font-size: 22px;
+			text-transform: capitalize;
+			padding-left: 30px;
+		}
+	}
+}
 /* Header end */
 /* Promo bar start */
 .promo_bar{
@@ -578,7 +709,7 @@ body{
 		color: #00a79d;
 	}
 }
-.contacts_box{
+.contacts_options{
 	.phone_ico{
 		background:url(../images/ico-phone.png) no-repeat;
 		width:34px;
@@ -764,6 +895,12 @@ only screen and (min-resolution: 2dppx){
 	.additional_nav,
 	.additional_nav .search_btn,
 	.additional_nav .shoppingcart_btn{display: block;}
+	.additional_nav .shoppingcart_btn{
+		margin-left: 25px;
+		margin-right: 10px;
+	}
+	#mobile_nav{display: block;}
+	#header{position: relative;}
 	.promo{
 		margin-bottom: 40px;
 		height: 500px;
@@ -812,10 +949,6 @@ only screen and (min-resolution: 2dppx){
 			width:50% !important;
 			text-align:center !important;
 			margin-bottom:20px;
-		}
-		.ico{
-			margin-left:0 !important;
-			margin-right:0 !important;
 		}
 	}
 	.wereinthenews_section{
@@ -900,8 +1033,9 @@ only screen and (min-resolution: 2dppx){
 		display:block;
 		text-align:center;
 		border-top:1px solid #bdbdbd;
-		margin-top:25px;
-		padding-top:40px;
+		margin-top:10px;
+		padding-top:20px;
+		margin-bottom: 20px;
 		h5{font-size:16px;}
 		& + .footer_col{
 			text-align:center;
@@ -926,11 +1060,19 @@ only screen and (min-resolution: 2dppx){
 			display:inline-block;
 			vertical-align:top;
 			float:none;
-			height:33px;
+			height:37px;
 		}
 	}
-}
-@media screen and (max-width:500px){
+	.footer_top{padding-bottom: 0;}
+	.footer_btm{
+		padding: 30px 0;
+		p{margin: 0;}
+	}
+	.footer_logo{margin-bottom: 20px;}
+	.footer_col{
+		padding-right: 0;
+		margin-bottom: 30px;
+	}
 	#header{
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -941,6 +1083,18 @@ only screen and (min-resolution: 2dppx){
 		background-size: contain;
 	}
 	.additional_nav{padding-top: 4px;}
-
+	.menu_btn{
+		margin-top:0;
+		font-size: 16px;
+		&:after{top:4px;}
+		&:before{
+			top:auto;
+			bottom:1px;
+		}
+		span{
+			&:after{top: 12px;}
+		}
+	}
+	.mobile_nav_drop{top: 49px;}
 }
 /* Footer end */
