@@ -881,6 +881,7 @@ body{
 		height: 100%;
 	}
 }
+/* Footer end */
 /* retina media queries*/
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -1143,4 +1144,12 @@ only screen and (min-resolution: 2dppx){
 	}
 	.mobile_nav_drop{top: 49px;}
 }
-/* Footer end */
+@media screen and (max-width:360px){
+	.menu_btn{
+		margin-left: 0;
+		font-size: 16px;
+	}
+	#logo{
+		width: 140px;
+	}
+}
