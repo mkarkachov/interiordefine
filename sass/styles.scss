@@ -818,6 +818,34 @@ only screen and (min-resolution: 2dppx){
 			margin-right:0 !important;
 		}
 	}
+	.wereinthenews_section{
+		padding-left: 20px;
+		padding-right: 20px;
+		.bx-wrapper{position: relative;}
+		.bx-prev{
+			position: absolute;
+			top:40%;
+			left: -20px;
+			background:url(../images/newsslider_btns.png) no-repeat;
+			width:11px;
+			height:28px;
+		}
+		.bx-next{
+			@extend .bx-prev;
+			left: auto;
+			right: -20px;
+			background-position: -11px 0;
+		}
+	}
+	.bx-wrapper .wereinthenews_list{
+		display: block;
+		height: 100%;
+		li{
+			display: flex;
+			height: 100%;
+		}
+		a{margin: auto;}
+	}
 }
 @media screen and (max-width:600px){
 	.howitworks_list{
@@ -835,18 +863,6 @@ only screen and (min-resolution: 2dppx){
 		}
 	}
 	.categories_list li{width: 50%;}
-	.wereinthenews_list{
-		flex-wrap: wrap;
-		margin-bottom: -20px;
-		text-align: center;
-		img{
-			display: inline-block;
-		}
-		li{
-			width: 50%;
-			margin-bottom: 40px;
-		}
-	}
 	.row{margin: 0;}
 	.row_2 > .box{
 		width: 100% !important;
@@ -925,5 +941,6 @@ only screen and (min-resolution: 2dppx){
 		background-size: contain;
 	}
 	.additional_nav{padding-top: 4px;}
+
 }
 /* Footer end */
