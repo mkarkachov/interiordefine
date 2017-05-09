@@ -266,11 +266,11 @@ body{
 	.menu_opened &{
 		&:before{
 			animation-name:rotate45;
-			bottom:9px !important;
+			bottom:13px !important;
 		}
 		&:after{
 			animation-name:rotate135;
-			top:12px !important;
+			top:17px !important;
 		}
 		span{
 			&:after{
@@ -1131,6 +1131,14 @@ only screen and (min-resolution: 2dppx){
 		}
 		span{
 			&:after{top: 12px;}
+		}
+		.menu_opened &{
+			&:before{
+				bottom:9px !important;
+			}
+			&:after{
+				top:12px !important;
+			}
 		}
 	}
 	.mobile_nav_drop{top: 49px;}
