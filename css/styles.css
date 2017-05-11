@@ -2401,9 +2401,6 @@ body {
   font: 14px "GillSansNova-Light", Arial, sans-serif;
   min-width: 320px; }
 
-#container {
-  position: relative; }
-
 .wrapper, .wrapper_wide {
   max-width: 1440px;
   min-width: 300px;
@@ -2438,13 +2435,36 @@ body {
     background-color: #009a8f;
     color: #fff; }
 
+#container {
+  padding-top: 99px; }
+  @media screen and (max-width: 600px) {
+    #container {
+      padding-top: 48px; } }
+
 /* Header start */
 #header {
   padding-top: 25px;
   padding-bottom: 25px;
   font-size: 13px;
   text-transform: uppercase;
-  position: relative; }
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 51;
+  background: #fff;
+  box-shadow: 0 4px 4px #e9e9e9; }
+  .sticky_header #header {
+    transition: all 0.25s ease-in-out;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .sticky_header #header #logo {
+      background-image: url(../images/logo-footer@2x.png);
+      width: 40px;
+      height: 40px;
+      background-size: cover; }
+    .sticky_header #header li:hover > .dropdown_menu {
+      top: 15px; }
 
 #logo {
   text-indent: -9999px;
@@ -2514,19 +2534,16 @@ body {
 .dropdown_menu {
   position: absolute;
   left: 0;
-  top: 0;
-  opacity: 0;
-  z-index: -99;
+  top: 50px;
+  z-index: 51;
   width: 100%;
   text-transform: none;
-  padding-top: 49px; }
+  padding-top: 49px;
+  display: none; }
   .dropdown_menu .inner {
     background: #f2f2f3; }
   #header li:hover > .dropdown_menu {
-    top: 50px;
-    opacity: 1;
-    z-index: 51;
-    transition: opacity 0.25s ease-in-out; }
+    display: block; }
   .dropdown_menu .wrapper, .dropdown_menu .wrapper_wide {
     padding-top: 26px;
     padding-bottom: 40px;
@@ -2672,15 +2689,18 @@ body {
   width: 100%;
   background: #fff;
   z-index: 51;
-  box-shadow: 0 4px 4px #e9e9e9;
+  box-shadow: 0 4px 4px #e9e9e9, inset 0 2px 2px #e9e9e9;
   opacity: 0;
   z-index: -99; }
+  .sticky_header .mobile_nav_drop {
+    top: 60px; }
   .menu_opened .mobile_nav_drop {
+    display: block;
     opacity: 1;
     z-index: 51;
     transition: opacity 0.25s ease-in-out; }
   .mobile_nav_drop .main_list {
-    padding: 0 20px; }
+    padding: 3px 20px 0; }
     .mobile_nav_drop .main_list > li {
       border-top: 1px solid #ebebeb; }
       .mobile_nav_drop .main_list > li:first-child {
@@ -2691,7 +2711,7 @@ body {
   .mobile_nav_drop strong.title {
     display: block;
     font: 17px GillSansNova-Book, Arial, sans-serif;
-    padding: 15px 0;
+    padding: 14px 0;
     letter-spacing: 1px; }
     .mobile_nav_drop strong.title .note {
       font: 13px GillSansNova-Light, Arial, sans-serif;
@@ -2748,7 +2768,6 @@ body {
 .promo_bar {
   text-align: center;
   background: #f2f2f3;
-  box-shadow: inset 0 4px 4px #e9e9e9;
   font: 15px/20px GillSansNova-Medium, Arial,sans-serif;
   color: #00a79d;
   padding: 11px 10px; }
@@ -3259,8 +3278,6 @@ body {
     margin-right: 10px; }
   #mobile_nav {
     display: block; }
-  #header {
-    position: relative; }
   .promo {
     margin-bottom: 40px;
     height: 500px;
@@ -3433,14 +3450,17 @@ body {
     padding-right: 0;
     margin-bottom: 30px; }
   #header {
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-top: 14px;
+    padding-bottom: 14px; }
   #logo {
     width: 160px;
     height: 28px;
     background-size: contain; }
   .additional_nav {
     padding-top: 4px; }
+    .sticky_header .additional_nav {
+      padding-top: 14px;
+      transition: all 0.25s ease-in-out; }
   .menu_btn {
     margin-top: 0;
     font-size: 12px; }
@@ -3453,13 +3473,18 @@ body {
       padding-top: 3px;
       padding-left: 20px; }
       .menu_btn span:after {
-        top: 12px; }
+        top: 11px; }
     .menu_opened .menu_btn:before {
       bottom: 7px !important; }
     .menu_opened .menu_btn:after {
       top: 12px !important; }
+    .sticky_header .menu_btn {
+      margin-top: 8px;
+      transition: all 0.25s ease-in-out; }
   .mobile_nav_drop {
-    top: 49px; } }
+    top: 56px; }
+    .sticky_header .mobile_nav_drop {
+      top: 60px; } }
 
 @media screen and (max-width: 360px) {
   .menu_btn {
