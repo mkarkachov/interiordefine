@@ -1100,6 +1100,7 @@ only screen and (min-resolution: 2dppx){
 		p br{display: none;}
 	}
 	#container{padding-top: 60px;}
+	.howitworks_section{margin-bottom: 45px;}
 	.howitworks_list{
 		li{
 			display: block;
@@ -1132,7 +1133,13 @@ only screen and (min-resolution: 2dppx){
 	.section{padding-bottom: 30px;}
 	.categories_list{
 		margin-bottom: 0;
-		.img{margin-bottom: 0;}
+		.img{
+			margin-bottom: 0;
+			img{
+				max-width: 90%;
+				margin: 0 auto;
+			}
+		}
 		li{
 			width: 50%;
 			position: relative;

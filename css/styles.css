@@ -3393,6 +3393,9 @@ body {
 .mobile_device #container {
   padding-top: 60px; }
 
+.mobile_device .howitworks_section {
+  margin-bottom: 45px; }
+
 .mobile_device .howitworks_list {
   padding-top: 20px;
   font-size: 16px;
@@ -3428,6 +3431,9 @@ body {
   margin-bottom: 0; }
   .mobile_device .categories_list .img {
     margin-bottom: 0; }
+    .mobile_device .categories_list .img img {
+      max-width: 90%;
+      margin: 0 auto; }
   .mobile_device .categories_list li {
     width: 50%;
     position: relative;
@@ -3608,6 +3614,8 @@ body {
       display: none; }
   #container {
     padding-top: 60px; }
+  .howitworks_section {
+    margin-bottom: 45px; }
   .howitworks_list {
     padding-top: 20px;
     font-size: 16px;
@@ -3639,6 +3647,9 @@ body {
     margin-bottom: 0; }
     .categories_list .img {
       margin-bottom: 0; }
+      .categories_list .img img {
+        max-width: 90%;
+        margin: 0 auto; }
     .categories_list li {
       width: 50%;
       position: relative;
