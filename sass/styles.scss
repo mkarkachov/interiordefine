@@ -421,7 +421,7 @@ body{
 /* Promo block start */
 .promo{
 	position: relative;
-	padding-bottom: 26px;
+	padding: 0 0 26px;
 	margin-bottom: 75px;
 	.img{
 		img{
@@ -430,11 +430,33 @@ body{
 			height: auto;
 		}
 	}
+	.mobile_device &{
+		height: 382px;
+		background:url(../images/img1_mobile.jpg) no-repeat 50% 0;
+		background-size: cover;
+		.text{
+			padding-top: 40px;
+			h2{
+				font-size: 15px;
+				line-height: 22px;
+				letter-spacing: 1px;
+			}
+			.btn_holder{bottom: 38px;}
+			.btn{
+				font-size: 10px;
+				padding: 6px 30px;
+				letter-spacing: 1px;
+			}
+		}
+	}
 	.text{
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-right: 10px;
 		text-align: center;
 		color: #fff;
 		h2{
@@ -459,6 +481,15 @@ body{
 		letter-spacing: 2px;
 	}
 	p{margin-bottom:5px;}
+	.mobile_device &{
+		font-size: 16px;
+		h2{
+			font-size: 18px;
+			line-height: normal;
+			margin-bottom: 22px;
+		}
+		p br{display: none;}
+	}
 }
 /* howitworks section start */
 .howitworks_section{
@@ -508,6 +539,17 @@ body{
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
+		}
+	}
+	.mobile_device &{
+		padding-top: 20px;
+		font-size: 16px;
+		line-height: 26px;
+		.title{font-size: 22px;}
+		.number{
+			width: 30px;
+			line-height: 30px;
+			font-size: 18px;
 		}
 	}
 }
@@ -914,6 +956,21 @@ body{
 	}
 }
 /* Footer end */
+.video_holder{
+	position:relative;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
+	max-width:100%;
+	height:auto;
+}
+.video_holder iframe, .video_holder object, .video_holder embed{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
 /* retina media queries*/
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -1072,12 +1129,17 @@ only screen and (min-resolution: 2dppx){
 	.row{
 		margin: 0;
 		display: block;
+		.box{
+			margin-bottom: 10px;
+			display: block;
+		}
 	}
 	.row_2 > .box{
 		width: 100% !important;
 		float: none;
 		display: block;
 		margin-bottom: 10px;
+		& .row_2 .box:last-child{margin-bottom: 0;}
 	}
 	.popular_product_item{
 		padding: 0;
