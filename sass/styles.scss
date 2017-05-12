@@ -1123,7 +1123,29 @@ only screen and (min-resolution: 2dppx){
 			font-size: 18px;
 		}
 	}
-	.categories_list li{width: 50%;}
+	.wereinthenews_section{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-bottom: 30px;
+	}
+	.popular_products_grid{margin-bottom: 30px;}
+	.section{padding-bottom: 30px;}
+	.categories_list{
+		margin-bottom: 0;
+		.img{margin-bottom: 0;}
+		li{
+			width: 50%;
+			position: relative;
+			padding-bottom: 25px;
+			margin-bottom: 20px;
+			strong{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+			}
+		}
+	}
 	.row{
 		margin: 0;
 		display: block;
