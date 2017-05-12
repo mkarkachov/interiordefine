@@ -1053,7 +1053,7 @@ only screen and (min-resolution: 2dppx){
 	}
 }
 @mixin mobileAndSmallScreenCss() {
-	#container{padding-top: 56px;}
+	#container{padding-top: 60px;}
 	.howitworks_list{
 		li{
 			display: block;

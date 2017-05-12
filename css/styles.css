@@ -3348,7 +3348,7 @@ body {
       margin: auto; } }
 
 .mobile_device #container {
-  padding-top: 56px; }
+  padding-top: 60px; }
 
 .mobile_device .howitworks_list li {
   display: block;
@@ -3515,7 +3515,7 @@ body {
 
 @media screen and (max-width: 600px) {
   #container {
-    padding-top: 56px; }
+    padding-top: 60px; }
   .howitworks_list li {
     display: block;
     width: 100%; }
